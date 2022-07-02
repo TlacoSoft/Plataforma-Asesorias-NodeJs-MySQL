@@ -19,7 +19,7 @@ app.use("/", (req, res)=> {
     res.end("Asesorias")
 });
 
-//app.use("/users", require('./routes/users'));
+app.use("/users", require('./routes/users'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
