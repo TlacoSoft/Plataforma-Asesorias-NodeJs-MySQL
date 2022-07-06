@@ -5,7 +5,7 @@ const mysqlConnection  = require('../database.js');
 
 // GET all Users
 router.get('/get', (req, res) => {
-  mysqlConnection.query('SELECT * FROM TB_USER', (err, rows, fields) => {
+  mysqlConnection.query('SELECT * FROM users', (err, rows, fields) => {
     if(!err) {
       res.json(rows);
     } else {
@@ -14,12 +14,12 @@ router.get('/get', (req, res) => {
   });  
 });
 //POST EMAIL AND PASS
-router.post("/", (req,res) => {
+router.post("/login", (req,res) => {
 
   let correo =  req.body.correo
-  let contraseña = req.body.contraseña 
+  let password = req.body.password 
 
-  query = `SELECT * FROM TB_USER WHERE CORREO = '${correo}' AND CONTRASEÑA = '${contraseña}'`
+  query = `SELECT * FROM users WHERE correo = '${correo}' AND password = '${password}'`
  
   mysqlConnection.query(query, (err, rows, fields) => {
             if (!err) {
@@ -29,11 +29,13 @@ router.post("/", (req,res) => {
                 res.json({status: "User not found"})
               }
             } else {
-              console.log(err);
-              res.json({status: "query error"})
+              return res.status(500).json( {
+                message: 'Error',
+                error: err
+              })
             }
   });
-})
+});
 
 //GET An User
 router.get('/:id', (req, res) => {

@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -15,8 +16,8 @@ app.use(express.json());
 // });
 
 // Routes
-app.use("/", (req, res)=> {
-    res.end("Asesorias")
+router.get("/", (req, res)=> {
+    res.json({"Message":"Asesorias"})
 });
 
 app.use("/users", require('./routes/users'));
