@@ -15,13 +15,14 @@ app.use(express.json());
 // });
 
 // Routes
-app.get("/", (req, res)=> {
-    res.json({"Message":"Asesorias"})
+app.get("/", (req, res) => {
+    res.json({ "Message": "Asesorias" })
 });
 
 app.use("/users", require('./routes/users'));
+app.use("/nivel_escolaridad", require('./routes/nivel_escolaridad'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
-  console.log(`Server on port ${app.get('port')}`);
+    console.log(`Server on port ${app.get('port')}`);
 });
