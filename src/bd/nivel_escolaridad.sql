@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `nivel_escolaridad` (
   `idNivel` int(11) NOT NULL,
-  `nivel` varchar(255) DEFAULT NULL
+  `nivel` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
