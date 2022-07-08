@@ -15,13 +15,13 @@ app.use(express.json());
 // });
 
 // Routes
-app.get("/", (req, res)=> {
-    res.json({"Message":"Asesorias"})
+app.get("/", (req, res) => {
+    res.json({ "Message": "Asesorias" })
 });
 
-app.use("/users", require('./routes/usuarios'));
+app.use("/users", require('./routes/users'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
-  console.log(`Server on port ${app.get('port')}`);
+    console.log(`Server on port ${app.get('port')}`);
 });
