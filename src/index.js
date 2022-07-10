@@ -19,8 +19,9 @@ app.get("/", (req, res) => {
     res.json({ "Message": "Asesorias" })
 });
 
-app.use("/users", require('./routes/users'));
+app.use("/users", require('./routes/usuarios'));
 app.use("/nivel_escolaridad", require('./routes/nivel_escolaridad'));
+app.use("/asesorias", require('./routes/asesorias'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
