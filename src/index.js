@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", require('./routes/users'));
+app.use("/nivel_escolaridad", require('./routes/nivel_escolaridad'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
