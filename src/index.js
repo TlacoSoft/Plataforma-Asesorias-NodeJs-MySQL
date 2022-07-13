@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 
 app.use("/users", require('./routes/usuarios'));
 app.use("/nivel_escolaridad", require('./routes/nivel_escolaridad'));
+app.use("/asesorias", require('./routes/asesorias'));
 
 // Starting the server
 app.listen(app.get('port'), () => {
