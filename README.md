@@ -1,11 +1,15 @@
 # Plataforma de Asesorias en NodeJS con MySQL
 
+![descripcion](Nodejs.jpeg)
+
 Proyecto desarrollado para la materia de Desarrollo Web Integral.
 
 Consiste en la creación de una plataforma web que impartira asesorias de diferentes materias, niveles, temas,. etc.
 
 El equipo Tlacosoft lo esta desarrollando con el framework Angular para el frontend, para  el backend usaremos
 NodeJs con MySQL y ExpressJs.
+
+![descripcion](logosvisual.jpeg)
 
 Se desplegara en Microsoft Azure, usando App Services para la API y  App Web Static para la plataforma.
 
@@ -15,6 +19,86 @@ Se desplegara en Microsoft Azure, usando App Services para la API y  App Web Sta
 
 [API](https://asesoriasnode.azurewebsites.net/)
 
+## Tabla Profesores ##
+
+Esta tabla contiene campos donde se mostrara la 
+información del perfil del profesor.
+
+<table>
+<tr>
+<td>IdProfesor</td>
+<td>IdAlumno</td>
+<td>edad</td>
+<td>sexo</td>
+<td>titulo</td>
+<td>cedula_profesional</td>
+<td>grado_estudio</td>
+<td>certificaciones</td>
+</tr>
+<tbody>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>18</td>
+<td>Femenino</td>
+<td>Ingenieria en mecatronica</td>
+<td>TSU9876s987</td>
+<td>Cuarto cuatrimestre</td>
+<td>Cisco, etc.</td>
+</tr>
+</tbody>
+</table>
+
+## Tabla de Tipo ##
+
+Solo mostrara el Id de la persona si es un profesor o un alumno.
+
+<table>
+<tr>
+<td>IdTipo</td>
+<td>nombre</td>
+</tr>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alumno</td>
+</tr>
+</tbody>
+</table>
+
+## Tabla de Usuarios ##
+
+Aqui se encontraran registrada toda la información de 
+cada uno de los usuarios como lo es su información personal etc.
+
+<table>
+<tr>
+<td>IdUsuario</td>
+<td>nombre</td>
+<td>apellido_ p</td>
+<td>apellido_m</td>
+<td>edad</td>
+<td>sexo</td>
+<td>correo</td>
+<td>password</td>
+<td>Telefono</td>
+<td>imagen</td>
+</tr>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alejandra</td>
+<td>Martinez</td>
+<td>López</td>
+<td>22</td>
+<td>Mujer</td>
+<td>alejandragmail.com</td>
+<td>kjh56</td>
+<td>9516788762</td>
+<td>https://img2.freepng.es/20180612/yaq/kisspng-computer-icons-woman-user-clip-art-5b1f6aa8cd7b53.6682503915287855768417.jpg</td>
+</tr>
+</tbody>
+</table>
 
 ## Tabla de nivel de escolaridad
 
