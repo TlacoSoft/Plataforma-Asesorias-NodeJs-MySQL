@@ -75,7 +75,7 @@ router.post('/create', (req, res) => {
       if(rows!=''){
         res.json({status: 'El correo ya ha sido registrado'});
       }else
-      mysqlConnection.query('INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido_p`, `apellido_m`, `edad`, `sexo`, `correo`, `password`, `Telefono`, `imagen`) VALUES (NULL,?,?,?,?,?,?,?,?,?)', [nombre,apellido_p,apellido_m,edad,sexo,correo,password,telefono,imagen], (err, rows, fields) => {
+      mysqlConnection.query('INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido_p`, `apellido_m`, `edad`, `sexo`, `correo`, `password`, `telefono`, `imagen`) VALUES (NULL,?,?,?,?,?,?,?,?,?)', [nombre,apellido_p,apellido_m,edad,sexo,correo,password,telefono,imagen], (err, rows, fields) => {
         if(!err) {
           res.json({status: 'Usuario registrado'});
           } else {
