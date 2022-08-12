@@ -5,7 +5,7 @@ const mysqlConnection = require('../database.js');
 
 // GET all Users
 router.get('/get', (req, res) => {
-    mysqlConnection.query('SELECT * FROM asesoria INNER JOIN usuarios on usuarios.idUsuario = asesoria.alumno', (err, rows, fields) => {
+    mysqlConnection.query('SELECT * FROM asesoria INNER JOIN usuarios on usuarios.idUsuario = asesoria.encargado', (err, rows, fields) => {
         if (!err) {
             res.json(rows);
         } else {
@@ -17,10 +17,10 @@ router.get('/get', (req, res) => {
 // Obtener un usuario
 router.get('/:id', (req, res) => {
     const { id } = req.params; 
-    mysqlConnection.query('SELECT * FROM asesoria WHERE idAsesoria = ?', [id], (err, rows, fields) => {
+    mysqlConnection.query('SELECT * FROM asesoria INNER JOIN usuarios on usuarios.idUsuario = asesoria.encargado WHERE alumno= ?', [id], (err, rows, fields) => {
       if (!err) {
         if(rows!=''){
-          res.json(rows[0]);  
+          res.json(rows);  
         }else{                
           res.json({status: "User not found"})
         }
