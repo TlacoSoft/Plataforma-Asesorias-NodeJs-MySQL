@@ -14,7 +14,21 @@ router.get('/get', (req, res) => {
     });
 });
 
-
+// GET all profesores
+router.get('/:id', (req, res) => {
+    const { id } = req.params; 
+    mysqlConnection.query('SELECT * FROM profesores WHERE idProfesor = ?', [id], (err, rows, fields) => {
+      if (!err) {
+        if(rows!=''){
+          res.json(rows);  
+        }else{                
+          res.json({status: "User not found"})
+        }
+      } else {
+        console.log(err);
+      }
+    });
+  });
 
 
 // // DELETE profesores
